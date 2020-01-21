@@ -1,2 +1,15 @@
-<h1>Bids#new</h1>
-<p>Find me in app/views/bids/new.html.erb</p>
+
+
+
+<h1> place a new item.</h1>
+<%= form_for @bid do |f| %>
+    <%= f.collection_select :user_id, User.all, :id, :name%>
+    <%= f.collection_select :item_id, Item.all, :id, :name%>
+   
+    <%= f.label :amount%>
+    <%= f.number_field :amount%><br />
+
+    <%=f.submit%>
+
+  
+<% end %>
