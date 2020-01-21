@@ -5,11 +5,14 @@
 
 <div> Description: <%= @item.desc%></div>
 <div>Starting price: <%= @item.price%></div>
+<% if @item.bids.any?%>
 <%new_array = @item.bids.select do |bid|%>
     <%bid.amount > @item.price%>
 <% end %>
     <div> Current Price: $<%=new_array.max.amount%></div>
+    <%else%>
 
+<% end %>
 
 
 </ul>
