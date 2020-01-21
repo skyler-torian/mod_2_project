@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Item.destroy_all
+Bid.destroy_all
+UserItem.destroy_all
 
 amia = User.create(name: "Amia", username: "Sneakerhead12")
 skyler = User.create(name: "Skyler", username: "skyler1")

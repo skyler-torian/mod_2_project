@@ -5,7 +5,14 @@
 
 <div> Description: <%= @item.desc%></div>
 <div>Starting price: <%= @item.price%></div>
+<%new_array = @item.bids.select do |bid|%>
+    <%bid.amount > @item.price%>
+<% end %>
+    <div> Current Price: $<%=new_array.max.amount%></div>
+
+
 
 </ul>
 
 <div><%= link_to "Back to Items", items_path%></div>
+<div><%= link_to "Place a Bid", new_bid_path%></div>
