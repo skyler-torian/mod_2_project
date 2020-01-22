@@ -12,7 +12,6 @@
 
 <h1> Place a new bid on this item.</h1>
 <%= form_for @bid do |f| %>
-    <%= f.collection_select :user_id, User.all, :id, :name%>
     <%= f.collection_select :item_id, Item.all, :id, :name%>
    
     <%= f.label :amount%>

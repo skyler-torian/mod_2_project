@@ -8,21 +8,12 @@ class ItemsController < ApplicationController
     end
 
     def show
-        # if @item.bids.any?
-        #     @new_array = @item.bids.select do |bid|
-        #         bid.amount > @item.price
-        #     end
-        #     @max = @new_array.max_by do |bid|
-        #      bid.amount
-        #     end 
-        # else 
-        #     "currently no bids"
-        # end
   
     end
 
     def new
         @item = Item.new
+
     end
 
     def create

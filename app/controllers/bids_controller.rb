@@ -5,10 +5,9 @@ class BidsController < ApplicationController
   end
 
   def create
-    @bid = Bid.new(bid_params)
-    if @bid.valid?
- 
-      @bid.save
+    @bid = current_user.bids.create!(bid_params.merge({ :user_id => current_user.id }))
+    if @bid
+      # byebug
       redirect_to item_path(@bid.item_id)
     else
       render :new
