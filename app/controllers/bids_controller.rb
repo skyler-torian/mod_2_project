@@ -7,6 +7,7 @@ class BidsController < ApplicationController
   def create
     @bid = Bid.new(bid_params)
     if @bid.valid?
+ 
       @bid.save
       redirect_to item_path(@bid.item_id)
     else

@@ -1,8 +1,8 @@
 class Bid < ApplicationRecord
     belongs_to :user
     belongs_to :item
-    validates :amount, numericality: {greater_than: max_bid}
-
+    validates :amount, numericality: { greater_than: 0}
+  
 
     def current_price(amount)
         if @bid.amount > @bid.item.price 
@@ -10,10 +10,18 @@ class Bid < ApplicationRecord
         else
             render :new
         end
+    end
+
+  
+end
+        
+
+        
+   
 
             
 
-    end
+    
   
 
 
@@ -25,4 +33,3 @@ class Bid < ApplicationRecord
 
 
 
-end
