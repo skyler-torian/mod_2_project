@@ -4,7 +4,7 @@
 <h3>Listing page for: <%= @item.name%></h3>
 
 <div> Description: <%= @item.desc%></div>
-<div>Starting price: <%= @item.price%></div>
+<div>Starting price: $<%= @item.price%></div>
     <%if @item.bids_greater_than_current_price%>
          <div> Current Price: $<%=@item.max_bid_amount%></div>
     <% else %>
