@@ -1,16 +1,19 @@
 <head>
-<title><%= @item.name%></title>
+    <title><%= @item.name%></title>
 </head>
 <h3>Listing page for: <%= @item.name%></h3>
 
 <div> Description: <%= @item.desc%></div>
 <div>Starting price: <%= @item.price%></div>
-    <div> Current Price: $<%=@max.amount%></div>
+    <%if @item.bids_greater_than_current_price%>
+         <div> Current Price: $<%=@item.max_bid_amount%></div>
+    <% else %>
+        <%= "Currently there are no bids."%>
+    <% end %>
 
 
 
 
-</ul>
 
 <div><%= link_to "Back to Items", items_path%></div>
 <div><%= link_to "Place a Bid", new_bid_path%></div>

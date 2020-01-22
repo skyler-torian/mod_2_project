@@ -8,16 +8,17 @@ class ItemsController < ApplicationController
     end
 
     def show
-        if @item.bids.any?
-            @new_array = @item.bids.select do |bid|
-                bid.amount > @item.price
-            end
-        end 
-
-        @max = @new_array.max_by do |bid|
-         bid.amount
-        end 
-
+        # if @item.bids.any?
+        #     @new_array = @item.bids.select do |bid|
+        #         bid.amount > @item.price
+        #     end
+        #     @max = @new_array.max_by do |bid|
+        #      bid.amount
+        #     end 
+        # else 
+        #     "currently no bids"
+        # end
+  
     end
 
     def new
@@ -26,9 +27,12 @@ class ItemsController < ApplicationController
 
     def create
         @item = Item.new(item_params)
-        
-        @item.save
-        redirect_to item_path(@item)
+        if @item.valid?
+         @item.save
+         redirect_to item_path(@item)
+        else
+            render :new
+        end
        
          
         
