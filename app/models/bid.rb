@@ -12,6 +12,10 @@ class Bid < ApplicationRecord
         end
     end
 
+    
+
+
+
   
 end
         

@@ -8,7 +8,8 @@ class ItemsController < ApplicationController
     end
 
     def show
-  
+        # byebug
+        cookies[:item_id] = {value: @item.id}   
     end
 
     def new
