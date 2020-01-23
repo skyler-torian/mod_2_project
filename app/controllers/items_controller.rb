@@ -17,9 +17,10 @@ class ItemsController < ApplicationController
     end
 
     def create
-        @item = Item.new(item_params)
-        if @item.valid?
-         @item.save
+        # byebug
+        @item = current_user.items.create!(item_params.merge({ :user_id => current_user.id}))
+
+        if @item
          redirect_to item_path(@item)
         else
             render :new

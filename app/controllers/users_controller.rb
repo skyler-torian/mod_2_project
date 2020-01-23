@@ -10,13 +10,12 @@ class UsersController < ApplicationController
 
     
     def new
-        @item = Item.new
+        @user = User.new
     end
 
     def create
-        @user = User.find()
-        @item = Item.create(user_params)
-        redirect
+        @user = User.create(user_params)
+        redirect_to user_path(@user)
 
     end
 

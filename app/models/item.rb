@@ -1,8 +1,9 @@
 class Item < ApplicationRecord
-    has_many :user_items
-    has_many :bids
+    belongs_to :user, class_name: 'User'
     has_many :users, through: :bids
-    has_many :users, through: :user_items
+    has_many :bids
+  
+
     validates :name, presence: true
     validates :desc, presence: true
     validates :price, presence: true, numericality: {greater_than:0}
