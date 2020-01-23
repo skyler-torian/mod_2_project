@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :items 
   resources :bids
 
-  resources :users, except: [:delete]
+  resources :users, except: [:delete, :index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
