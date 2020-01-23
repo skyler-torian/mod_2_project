@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     end
 
     def create
-        # byebug
+         #byebug
         @item = current_user.items.create!(item_params.merge({ :user_id => current_user.id}))
 
         if @item

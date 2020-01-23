@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
+  get "/", to: "sessions#home", as: "home"
   resources :items 
   resources :bids
 
