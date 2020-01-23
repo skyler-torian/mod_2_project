@@ -13,13 +13,26 @@
  *= require_tree .
  *= require_self
  */
-.heading{
-    color: red;
-    background-image: url(shebay-logo.png);
-    background-size: cover;
-}
-.form {
-    margin: 50px 25vw;
-    padding: 20px;
-    border: 1px solid lightgray;
-}
+  .wrapper {
+
+  }  
+ 
+.logo_image {
+      height: 120px;
+      float: right;
+    }
+
+.login_image {
+        height: 120px;
+        float: right;
+      }
+      
+    
+    .form {
+       margin: 50px 25vw;
+       padding: 20px;
+       border: 1px solid lightgray;
+   }
+  
+    
+ 

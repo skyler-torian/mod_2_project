@@ -1,5 +1,5 @@
 <h1 class="heading_wrapper">Create an account</h1>
-<div class="heading">Shebay</div>
+
 <%= form_for @user, html:{class: "ui form"} do |f| %>
     <div class= "field">
     <%= f.label :name%>
@@ -12,6 +12,7 @@
     <%= f.password_field :password%></div>
     <button class= "ui button" type="submit">Submit</button>
     <%= link_to 'Back to log in page', login_path %>
+    
 <% end %>
 </form>
     

@@ -1,3 +1,4 @@
+<div class="ui container">
 <h1><%= @user.name.titlecase%>'s profile page</h1>
 
 <ul>
@@ -6,8 +7,7 @@
             <li><%=link_to item.name, item_path(item) %> <%= link_to "Delete this item", item_path(item), :method => :delete %></li>
         <% end %>
 </ul>
-
-<div>
+    <div>
     <h3>Bidding auctions you are in and the latest bids:</h3>
     <ul>
         <% @user.latest_bids.each do |bid| %>
@@ -17,13 +17,13 @@
     </ul>
 </div>
 
-
-
-
-
-
-
-
-
-
 <%= link_to "Sell an item.", new_item_path %>
+</div>
+
+
+
+
+
+
+
+
