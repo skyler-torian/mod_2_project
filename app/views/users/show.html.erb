@@ -2,7 +2,7 @@
 <ul>
 <h3>Items you're selling: </h3>
 <%@user.items.each do |item|%>
-<li><%=link_to item.name, item_path(item) %></li>
+<li><%=link_to item.name, item_path(item) %> <%= link_to "Delete this item", item_path(item), :method => :delete %></li>
 <% end %>
 </ul>
 <%= link_to "Sell an item.", new_item_path %>
