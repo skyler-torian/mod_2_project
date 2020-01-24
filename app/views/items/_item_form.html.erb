@@ -8,8 +8,8 @@
   </div>
 <% end %>
 
-<h1> Add a new item.</h1>
-<%= form_for @item do |f| %>
+<h1 class = "item_header"> Sell a new item</h1>
+<%= form_for @item, html:{class: "ui form"} do |f| %>
     <%= f.label :name%>
     <%= f.text_field :name%><br />
 

@@ -13,26 +13,136 @@
  *= require_tree .
  *= require_self
  */
-  .wrapper {
+ body {
+    background-color: rgb(236, 230, 230);
+   }
+    
+    .login_status {
+        display: inline-block;
+        color: white;
+        text-align: right;
+        padding: 14px 16px;
+        text-decoration: none;
+        float: right;
+    } 
 
-  }  
- 
-.logo_image {
-      height: 120px;
-      float: right;
+    .wrapper {
+
+    }  
+    .logo_image {
+        height: 120px;
+        float: left;
     }
 
-.login_image {
+    .login_image {
         height: 120px;
+        float: right;
+    }
+        
+        
+        .form {
+        margin: 50px 25vw;
+        padding: 20px;
+        border: 1px solid lightgray;
+    }
+    /* navigation bar */
+
+    .nav_ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #2f2e6e;
+      
+      }
+      .logout_but{
+        display: inline-block;
+        color: white;
+        text-align: right;
+        padding: 14px 16px;
+        text-decoration: none;
         float: right;
       }
       
+      li{
+        float: left;
+      }
     
-    .form {
-       margin: 50px 25vw;
-       padding: 20px;
-       border: 1px solid lightgray;
-   }
-  
+      li a, .dropbtn {
+        display: inline-block;
+        color: rgb(0, 0, 0);
+        text-align: right;
+        padding: 14px 16px;
+        text-decoration: none;
+        
+       
+      }
+      
+      li a :hover, .dropdown: hover .dropbtn {
+        background-color: #00000;
+      }
+        li.dropdown{
+          display: inline-block;
+        }
+      
+      
+      li.dropdown {
+        display: inline-block;
+      }
+      .dropdown-content{
+        display: none;
+        position: absolute;
+        background-color: #0004ff;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .dropdown-content a:hover {background-color: #0000}
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+/*background color to the top navigation */
+.topnav{
+  background-color: #ffffff;
+  overflow:hidden;
+}
+/*style of the links in the nav bar*/
+.topnav a{
+  font: arial;
+  float: left;
+  color: #ff0000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size:14px;
+}
+/* hover color*/
+.topnav a:hover {
+  background-color: #ff0000;
+  color: red; 
+}
+
+/*color to active link*/
+.topnav a.active{
+  background-color: #fcdbdb;
+  color: white;
+}
     
- 
+.pricecolor{
+  color: green;
+}
+.ui[class*="right floated"].button, .ui[class*="right floated"].buttons {
+  float: right;
+  margin-right: 5px;
+  margin-left: .25em;
+  margin-top: 5px;
+}

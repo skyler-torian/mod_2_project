@@ -1,24 +1,39 @@
-<div class="ui container">
-<h1><%= @user.name.titlecase%>'s profile page</h1>
-
-<ul>
-    <h3>Items you're selling: </h3>
-        <%@user.items.each do |item|%>
-            <li><%=link_to item.name, item_path(item) %> <%= link_to "Delete this item", item_path(item), :method => :delete %></li>
-        <% end %>
-</ul>
-    <div>
-    <h3>Bidding auctions you are in and the latest bids:</h3>
-    <ul>
-        <% @user.latest_bids.each do |bid| %>
-            <li><%=link_to bid.item.name, item_path(bid.item)%>: <%=bid.amount%> <%= link_to "Delete this bid", bid_path(bid.item), :method => :delete %></li>
-        <% end %>
-    
-    </ul>
+<div class="show_header">
+    <h1 ><%= @user.name.titlecase%>'s profile page</h1>
 </div>
 
-<%= link_to "Sell an item.", new_item_path %>
-</div>
+    <h3 class = "items_header">Items you're selling: </h3>
+    <ul class ="reg_ul">
+        <div class = "ui form">
+            <%@user.items.each do |item|%>
+                <div class ="li_name"> <li><%=link_to item.name, item_path(item) %></li></div>
+
+                <%=link_to(item, method: :delete)  do %>
+                    <div class="ui animated button" tabindex="0">
+                        <div class="visible content">
+                        Delete this item
+                        </div>
+                        <div class="hidden content">
+                            <i class="trash alternate icon"></i>
+                        </div>
+                    </div>
+                <% end %>
+
+                <button class="tiny ui button"> <%= link_to "Sell an item.", new_item_path %></button>
+                </div>
+            <% end %>
+        </div>
+        </ul>
+            <h3 class = "bidding_header">Bidding auctions you are in and the latest bids:</h3>
+        <div class = "ui form">
+            <ul class ="reg_ul">
+               <% @user.latest_bids.each do |bid| %>
+                <li><%=link_to bid.item.name, item_path(bid.item)%>$ <%=bid.amount%> <%= link_to "Delete this bid", bid_path(bid.item), :method => :delete %></li>
+            <% end %>
+            
+            </ul>
+        </div>
+
 
 
 

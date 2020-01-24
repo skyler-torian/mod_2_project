@@ -1,3 +1,38 @@
-// Place all the styles related to the Items controller here.
+ // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.item_header{
+    margin: 30px 580px;
+}
+.reg_ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:  rgb(236, 230, 230);
+  
+}
+  
+.items_list{
+    float: left;
+}
+.descwrapper{
+    color: rgb(74, 74, 163);
+    font-size: 15px;
+}
+.pricewrapper{
+    color: green;
+    font-size: 15px;
+}
+
+.startprice{
+    color: rgb(189, 58, 58);
+    font-size: 15px;
+}
+.ui.inverted.primary.button, .ui.inverted.primary.buttons .button {
+    background-color: transparent;
+    -webkit-box-shadow: 0 0 0 2px #2f2e6e inset!important;
+    box-shadow: 0 0 0 2px #2f2e6e inset!important;
+    color: #2f2e6e;
+    margin: 10px 40px;
+}

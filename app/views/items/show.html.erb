@@ -1,19 +1,23 @@
 <head>
     <title><%= @item.name%></title>
 </head>
-<h3>Listing page for: <%= @item.name%></h3>
+<h3 class = "item_header">Listing page for: <%= @item.name%></h3>
 
-<div> Description: <%= @item.desc%></div>
-<div>Starting price: $<%= @item.price%></div>
+ <div class = "form">
+ <div class = "descwrapper"> Description:</div> <%= @item.desc%><br>
+    <div class = "startprice">Starting price:</div> $<%= @item.price%><br />
     <%if @item.bids_greater_than_current_price%>
-         <div> Current Price: $<%=@item.max_bid_amount%></div>
+       <div class = "pricewrapper">Current Price: </div>$<%=@item.max_bid_amount%>
     <% else %>
-        <%= "Currently there are no bids."%>
-    <% end %>
+        <%= "Currently there are no bids."%><br>
+    <% end %><br>
 
+  <button class="ui inverted primary button"> <%= link_to "Back to Items", items_path%></button>
+    <%if current_user%>
+  <button class="ui inverted primary button"> <%= link_to "Place a Bid", new_bid_path%></button>
+    <%else%>
+  <button class="ui inverted primary button"> <%= link_to "Place a Bid", login_path%></button>
 
+<% end %>
+</div>
 
-
-
-<div><%= link_to "Back to Items", items_path%></div>
-<div><%= link_to "Place a Bid", new_bid_path%></div>
