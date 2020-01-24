@@ -6,22 +6,24 @@
     <ul class ="reg_ul">
         <div class = "ui form">
             <%@user.items.each do |item|%>
-                <div class ="li_name"> <li><%=link_to item.name, item_path(item) %></li></div>
-
-                <%=link_to(item, method: :delete)  do %>
-                    <div class="ui animated button" tabindex="0">
-                        <div class="visible content">
-                        Delete this item
-                        </div>
-                        <div class="hidden content">
-                            <i class="trash alternate icon"></i>
-                        </div>
-                    </div>
-                <% end %>
-
-                <button class="tiny ui button"> <%= link_to "Sell an item.", new_item_path %></button>
+                <div class ="li_name"> 
+                    <%=link_to item.name, item_path(item) %>
                 </div>
+
+                    <%=link_to(item, method: :delete)  do %>
+                        <div class="ui animated button" tabindex="0">
+                            <div class="visible content">
+                             Delete this item
+                            </div>
+                            <div class="hidden content">
+                                <i class="trash alternate icon"></i>
+                            </div>
+                        </div>
+                    <% end %>
+
             <% end %>
+                <button class="tiny ui button"><%= link_to "Sell an item.", new_item_path %></button>
+            </div>
         </div>
         </ul>
             <h3 class = "bidding_header">Bidding auctions you are in and the latest bids:</h3>
